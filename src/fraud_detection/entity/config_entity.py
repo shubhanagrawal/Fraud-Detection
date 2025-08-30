@@ -28,3 +28,27 @@ class PrepareBaseModelConfig:
     params_scale_pos_weight: int
     params_reg_alpha: float
     params_reg_lambda: float
+
+
+@dataclass(frozen=True)
+class TrainingConfig:
+    root_dir: Path
+    trained_model_path: Path
+    updated_base_model_path: Path
+    training_data: Path
+    
+    # XGBoost parameters
+    objective: str
+    eval_metric: str
+    max_depth: int
+    learning_rate: float
+    n_estimators: int
+    subsample: float
+    colsample_bytree: float
+    gamma: float
+    min_child_weight: int
+    scale_pos_weight: int
+    reg_alpha: float
+    reg_lambda: float
+    random_state: int
+    booster: str
